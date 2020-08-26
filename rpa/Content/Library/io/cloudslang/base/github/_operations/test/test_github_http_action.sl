@@ -6,7 +6,7 @@ flow:
         parallel_loop:
           for: "url in '/repos/pe-pan/rpa-aos,/repos/pe-pan/rpa-aos/releases,/repos/pe-pan/rpa-salesforce,/repos/pe-pan/rpa-salesforce/releases,/repos/rpa-micro-focus/rpa-rpa,/repos/rpa-micro-focus/rpa-rpa/releases,/repos/pe-pan/rpa-sap,/repos/pe-pan/rpa-sap/releases'"
           do:
-            io.cloudslang.microfocus.rpa.central._operations.github.operations.github_http_action:
+            io.cloudslang.base.github._operations.github_http_action:
               - url: '${url}'
               - method: GET
         publish:

@@ -37,7 +37,7 @@ flow:
           - SUCCESS: designer_http_action
     - designer_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: /
             - method: GET
             - verify_result: html
@@ -47,7 +47,7 @@ flow:
           - SUCCESS: get_x_csrf_token
     - get_x_csrf_token:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: /rest/v0/users/me
             - method: GET
         publish:

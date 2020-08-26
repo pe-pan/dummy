@@ -64,7 +64,7 @@ flow:
           - FAILURE: on_failure
     - set_json_properties:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.set_json_properties:
+          io.cloudslang.base.json.set_json_properties:
             - json_string: '${repre_json}'
             - properties: users
             - values: '${str(list(eval(existing_user_ids)+eval(new_user_ids)))}'

@@ -28,7 +28,7 @@ flow:
           - SUCCESS: get_process_status
     - get_process_status:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/scm/processes/%s' % process_id}"
             - token: '${token}'
             - method: GET

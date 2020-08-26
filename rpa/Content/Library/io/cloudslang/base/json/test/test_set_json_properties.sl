@@ -4,7 +4,7 @@ flow:
   workflow:
     - set_json_properties:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.set_json_properties:
+          io.cloudslang.base.json.set_json_properties:
             - json_string: |-
                 ${'''{
                     "id": "2c906fdc6e9009eb016e900a019f00ce",
@@ -73,7 +73,7 @@ flow:
           - FAILURE: on_failure
     - set_json_properties_1:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.set_json_properties:
+          io.cloudslang.base.json.set_json_properties:
             - json_string: '{"host":"rpa.mf-te.com","port":8458,"dbConfiguration":null}'
             - properties: 'host,port,dbConfiguration.dbType,dbConfiguration.host,dbConfiguration.port,dbConfiguration.username,dbConfiguration.password,dbConfiguration.dbName,dbConfiguration.passwordChanged'
             - values: 'rpa.mf-te.com,8458,POSTGRESQL,rpa.mf-te.com,5432,insight,Cloud@123,insight,true'
@@ -101,7 +101,7 @@ flow:
           - FAILURE: on_failure
     - set_json_properties_2:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.set_json_properties:
+          io.cloudslang.base.json.set_json_properties:
             - json_string: '{ "id" : "" }'
             - properties: id
             - values: '{"key" : "value"}'

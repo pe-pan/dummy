@@ -20,7 +20,7 @@ flow:
   workflow:
     - init_process:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: /rest/v0/imports
             - token: '${token}'
             - method: POST
@@ -62,7 +62,7 @@ flow:
           - FAILURE: on_failure
     - upload_file:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/imports/%s/files' % process_id}"
             - token: '${token}'
             - method: POST
@@ -75,7 +75,7 @@ flow:
           - SUCCESS: import_file
     - import_file:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/imports/%s' % process_id}"
             - token: '${token}'
             - method: PUT
@@ -87,7 +87,7 @@ flow:
           - SUCCESS: get_process_status
     - get_process_status:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/imports/%s' % process_id}"
             - method: GET
         publish:

@@ -21,7 +21,7 @@ flow:
   workflow:
     - list_files:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.file.list_files:
+          io.cloudslang.base.filesystem.list_files:
             - pattern: "${cps_folder+'/*.jar'}"
             - full_path: 'false'
         publish:

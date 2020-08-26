@@ -20,7 +20,7 @@ flow:
   workflow:
     - idm_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.idm_http_action:
+          io.cloudslang.microfocus.rpa.idm._operations.idm_http_action:
             - url: "${'/api/scim/organizations/%s/groups/%s/representations/%s' % (org_id, group_id, repre_id)}"
             - token: '${token}'
             - method: PUT

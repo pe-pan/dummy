@@ -19,7 +19,7 @@ flow:
   workflow:
     - register_scm:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: /rest/v0/connection-manager/register-host
             - token: '${token}'
             - method: POST
@@ -31,7 +31,7 @@ flow:
           - SUCCESS: get_scm_id
     - import_scm:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/workspaces/%s/repositories/import' % ws_id}"
             - token: '${token}'
             - method: POST
@@ -65,7 +65,7 @@ flow:
           - FAILURE: on_failure
     - get_process_status:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/scm/processes/%s' % process_id}"
             - method: GET
         publish:
@@ -118,7 +118,7 @@ flow:
           - FAILURE: on_failure
     - accept_scm:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/connection-manager/register-host/%s' % scm_id}"
             - token: '${token}'
             - method: PUT

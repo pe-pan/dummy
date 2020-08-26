@@ -16,7 +16,7 @@ flow:
   workflow:
     - ssx_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.ssx_http_action:
+          io.cloudslang.microfocus.rpa.ssx._operations.ssx_http_action:
             - url: /rest/v0/scenarios
             - token: '${token}'
             - method: POST

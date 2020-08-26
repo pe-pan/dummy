@@ -18,7 +18,7 @@ flow:
   workflow:
     - get_repo_details:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.github.operations.github_http_action:
+          io.cloudslang.base.github._operations.github_http_action:
             - url: "${'/repos/%s/%s' % (owner, repo)}"
             - method: GET
         publish:
@@ -32,7 +32,7 @@ flow:
           - SUCCESS: get_releases
     - get_latest_release:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.github.operations.github_http_action:
+          io.cloudslang.base.github._operations.github_http_action:
             - url: "${'/repos/%s/%s/releases/latest' % (owner, repo)}"
             - method: GET
         publish:
@@ -44,7 +44,7 @@ flow:
           - SUCCESS: SUCCESS
     - get_releases:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.github.operations.github_http_action:
+          io.cloudslang.base.github._operations.github_http_action:
             - url: "${'/repos/%s/%s/releases' % (owner, repo)}"
             - method: GET
         publish:

@@ -11,7 +11,7 @@ flow:
   workflow:
     - designer_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.designer_http_action:
+          io.cloudslang.microfocus.rpa.designer._operations.designer_http_action:
             - url: "${'/rest/v0/workspaces/%s/dependencies' % ws_id}"
             - method: GET
         publish:

@@ -12,7 +12,7 @@ flow:
   workflow:
     - idm_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.idm_http_action:
+          io.cloudslang.microfocus.rpa.idm._operations.idm_http_action:
             - url: "${'/api/scim/organizations/%s/users/%s' % (org_id, username_or_id)}"
             - token: '${token}'
             - method: DELETE
@@ -22,7 +22,7 @@ flow:
           - SUCCESS: delete_from_db
     - delete_from_db:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.idm_http_action:
+          io.cloudslang.microfocus.rpa.idm._operations.idm_http_action:
             - url: "${'/api/scim/organizations/%s/dbusers/%s' % (org_id, username_or_id)}"
             - token: '${token}'
             - method: DELETE

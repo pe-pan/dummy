@@ -13,7 +13,7 @@ flow:
   workflow:
     - idm_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.idm_http_action:
+          io.cloudslang.microfocus.rpa.idm._operations.idm_http_action:
             - url: /api/system/configurations/items
             - token: '${token}'
             - method: PATCH

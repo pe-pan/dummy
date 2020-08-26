@@ -9,7 +9,7 @@ flow:
   workflow:
     - insights_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.insights_http_action:
+          io.cloudslang.microfocus.rpa.insights._operations.insights_http_action:
             - url: /rest/v0/insights?light=false
             - method: GET
         publish:

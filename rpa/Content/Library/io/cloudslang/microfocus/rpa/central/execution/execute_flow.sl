@@ -71,7 +71,7 @@ flow:
           - 'FALSE': FAILURE_UNCOMPLETED
     - get_time:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.time.get_time: []
+          io.cloudslang.base.datetime.get_millis: []
         publish:
           - time_millis
         navigate:

@@ -16,7 +16,7 @@ flow:
   workflow:
     - idm_http_action:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.idm_http_action:
+          io.cloudslang.microfocus.rpa.idm._operations.idm_http_action:
             - url: "${'/api/scim/organizations/%s/users?order-by=displayName&sort=ascending&searchText=%s&scope=manager&includePerms=false&userType=SEEDED_USER' % (org_id, searchText)}"
             - token: '${token}'
             - method: GET

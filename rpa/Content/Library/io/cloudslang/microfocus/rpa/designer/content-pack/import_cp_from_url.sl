@@ -20,7 +20,7 @@ flow:
   workflow:
     - download_file:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.file.download_file:
+          io.cloudslang.base.utils.download_file:
             - file_url: '${cp_url}'
             - file_path: '${file_path}'
         publish:
@@ -57,7 +57,7 @@ flow:
     - on_failure:
         - delete_temp_file:
             do:
-              io.cloudslang.microfocus.rpa.central._operations.temp.delete_temp_file:
+              io.cloudslang.base.filesystem.temp.delete_temp_file:
                 - folder_path: '${folder_path}'
                 - file_path: '${downloaded_file_path}'
   outputs:

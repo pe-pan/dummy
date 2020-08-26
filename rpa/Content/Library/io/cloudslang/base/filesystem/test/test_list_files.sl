@@ -4,7 +4,7 @@ flow:
   workflow:
     - list_files:
         do:
-          io.cloudslang.microfocus.rpa.central._operations.file.list_files:
+          io.cloudslang.base.filesystem.list_files:
             - pattern: 'C:/Users/Administrator/Downloads/content-packs/*.jar'
             - full_path: 'false'
         publish:
